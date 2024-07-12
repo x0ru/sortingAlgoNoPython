@@ -1,0 +1,88 @@
+
+
+body{
+    height: 85vh;
+    text-align: center;
+}
+
+
+
+p{
+
+    border: 2px black solid;
+    width: 8vh;
+    min-height: 8vh;
+    padding: 2vh 0;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+#myArr, #myArr2, #myArr3{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#explanation{
+    width: 70vh;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    padding-top: 10vh;
+}
+
+.border-class{
+    border: 2px black solid;
+    width: 5vh;
+    height: 3vh;
+}
+
+#explanation1{
+    height: 7vh;
+    font-size: 1.75rem;
+
+
+}
+#explanation2{
+
+    height: 7vh;
+
+}
+
+#explanationExtra{
+    width: 8vh;
+    min-height: 8vh;
+    padding: 2vh 0;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 0;
+    margin-left: 30vh;
+
+
+}
+
+#empty{
+    height: 40vh;
+}
+
+#menu{
+    position: fixed;
+
+}
+
+.col-1-5{
+    width: 12.499999995%;
+}
+
+.w-10 {
+    width: 10%;
+}
+
+.btn {
+    height: 5vh;
+    font-size: 17px;
+    font-weight: 500;
+}
