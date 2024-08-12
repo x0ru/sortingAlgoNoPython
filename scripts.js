@@ -34,8 +34,12 @@ async function bubbleSort(arr) {
             explanationText.style.color=blue;
 
         }
-
-        explanationText.innerText=`Now our last ${i+ 1} element(s) are sorted.`;
+        if (i === 0){
+            explanationText.innerText=`Now our last ${i+ 1} element is sorted.`;
+        } else {
+            explanationText.innerText=`Now our last ${i+ 1} elements are sorted.`;
+        }
+        
         await new Promise(r => setTimeout(r, pace));
 
     }
@@ -58,7 +62,7 @@ async function selectionSort(arr) {
 
         let min = i;
         let oldJ = -1;
-        explanationText.innerText=`Value we compare to is ${arr[i]}.`
+        explanationText.innerText=`Current element is ${arr[i]}.`
         explanationText.style.color=yellow;
         myNumber[i].style.backgroundColor=red;
 
@@ -71,12 +75,13 @@ async function selectionSort(arr) {
                 if (oldJ !== -1){
                     myNumber[oldJ].style.backgroundColor='white';
                 }
-
-                explanationText.innerText=`${arr[j]} is smaller than ${arr[oldJ]}.`
+                if (arr[oldJ] !== undefined){
+                explanationText.innerText=`${arr[j]} is smaller than ${arr[oldJ]}. Keep it in memory.`
+                }
                 await new Promise(r => setTimeout(r, pace));
                 oldJ = j;
                 myNumber[j].style.backgroundColor=red;
-                explanationText.innerText=`The smallest value is ${arr[j]} so far.`
+                explanationText.innerText=`The smallest value in the rest of array is ${arr[j]} so far.`
                 explanationText.style.color=red;
                 await new Promise(r => setTimeout(r, pace));
                 explanationText.style.color=yellow;
@@ -144,7 +149,7 @@ async function insertionSort(arr){
             explanationText.innerText = `${arr[i]} is smaller than number on the left.`
             explanationText.style.color=yellow;
             await new Promise(r => setTimeout(r, pace));
-            explanationText.innerText = `Store ${arr[i]} as a temp variable.`
+            explanationText.innerText = `Store ${arr[i]} as a temporary variable.`
             extraNumber.innerText = arr[i];
             extraNumber.style.backgroundColor=yellow;
             extraNumber.classList.add('border-class');
@@ -199,7 +204,7 @@ async function insertionSort(arr){
         myNumber[x].style.backgroundColor=blue;
 
         }
-        explanationText.innerText = 'Blue part is sorted';
+        explanationText.innerText = 'Blue part is sorted is partially sorted.';
         explanationText.style.color = blue;
         await new Promise(r => setTimeout(r, pace));
     }
@@ -323,7 +328,7 @@ async function shellSort(arr) {
         }
         if ( gap !== 1){
 
-        explanationText.innerText=`We are changing the gap.`;
+        explanationText.innerText=`Change of the gap.`;
         explanationText.style.color=purple;
 
         } else {
